@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yusef.piano.PianoLayout">
+
+    <LinearLayout
+        android:id="@+id/blackPianoKeysLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/fileNameInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/whitePianoKeysLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="728dp"
+        android:layout_height="134dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/whitePianoKeysLayout"
+        app:layout_constraintVertical_bias="1.0">
+
+        <EditText
+            android:id="@+id/fileNameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="20"
+            android:hint="file name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/saveMusicSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="164dp"
+            android:layout_marginTop="24dp"
+            android:text="Save file"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileNameInput" />
+
+        <Button
+            android:id="@+id/startStopRecording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="24dp"
+            android:text="Start REC"
+            app:layout_constraintStart_toEndOf="@+id/saveMusicSheet"
+            app:layout_constraintTop_toBottomOf="@+id/fileNameInput" />
+
+        <Chronometer
+            android:id="@+id/recordingTimeChronometer"
+            android:layout_width="126dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/startStopRecording"
+            app:layout_constraintTop_toBottomOf="@+id/fileNameInput" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
